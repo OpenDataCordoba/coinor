@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'coinor.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'HOST': 'localhost',
         'USER': 'coinor',
         'PASSWORD': 'coinor',
