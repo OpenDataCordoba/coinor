@@ -77,11 +77,12 @@ WSGI_APPLICATION = 'coinor.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'HOST': 'localhost',
         'NAME': 'coinor',
         'USER': 'coinor',
-        'PASSWORD': 'coinor'
+        'PASSWORD': 'coinor',
+        'PORT': '5432'
     }
 }
 
