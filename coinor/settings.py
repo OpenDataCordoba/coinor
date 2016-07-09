@@ -76,9 +76,8 @@ WSGI_APPLICATION = 'coinor.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 import dj_database_url
-DATABASE_URL = 'postgres://coinor:coinor@localhost:5432/coinor'
-DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
-
+DATABASES = {'default': dj_database_url.config(default='postgres://coinor:coinor@localhost:5432/coinor', conn_max_age=600)}
+DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
