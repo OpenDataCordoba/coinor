@@ -66,4 +66,4 @@ class Relacion(models.Model):
     #TODO fecha de inicio y fecha de fin
 
     def __str__(self):
-        return '{} => {} Relacion: {}'.format(self.persona1, self.persona2, self.relacion)
+        return '{} => {}. Relacion: {}'.format(self.persona1, self.persona2, self.relacion)
