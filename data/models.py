@@ -6,7 +6,7 @@ from django.db import models
 class Pais(models.Model):
     nombre = models.CharField(max_length=120, null=True, blank=True)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.nombre
 
 
@@ -14,8 +14,8 @@ class Ciudad(models.Model):
     nombre = models.CharField(max_length=120, null=True, blank=True)
     pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
 
-    def __str__(self):
-        return '{} ({})'.format(self.nombre, self.pais)
+    def __unicode__(self):
+        return u'{} ({})'.format(self.nombre, self.pais)
 
 
 class TipoPersona(models.Model):
@@ -24,7 +24,7 @@ class TipoPersona(models.Model):
     '''
     nombres = models.CharField(max_length=120, null=True, blank=True)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.nombres
 
 
@@ -34,7 +34,7 @@ class UniqueId(models.Model):
     '''
     nombres = models.CharField(max_length=120, null=True, blank=True)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.nombres
 
 
@@ -44,7 +44,7 @@ class Persona(models.Model):
     tipo_uid = models.ForeignKey(UniqueId, on_delete=models.PROTECT)
     uid = models.CharField(max_length=90, null=True, blank=True)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.nombres
 
 
@@ -52,7 +52,7 @@ class TipoRelacion(models.Model):
     # familiar, aportante, socio, amigo, etc
     nombre = models.CharField(max_length=120)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.nombre
 
 
@@ -65,5 +65,5 @@ class Relacion(models.Model):
     relacion = models.ForeignKey(TipoRelacion, on_delete=models.PROTECT)
     #TODO fecha de inicio y fecha de fin
 
-    def __str__(self):
-        return '{} => {}. Relacion: {}'.format(self.persona1, self.persona2, self.relacion)
+    def __unicode__(self):
+        return u'{} => {}. Relacion: {}'.format(self.persona1, self.persona2, self.relacion)
