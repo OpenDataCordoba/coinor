@@ -52,6 +52,7 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
+coinor/static
 
 # Flask stuff:
 instance/
@@ -87,3 +88,4 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
